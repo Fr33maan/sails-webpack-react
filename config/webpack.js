@@ -4,6 +4,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var LiveReloadPlugin = require('webpack-livereload-plugin');
 var LessPluginCleanCSS = require('less-plugin-clean-css');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // on peut passer à notre commande de build l'option --production
 // on récupère sa valeur ici en tant que booléen
@@ -126,6 +128,10 @@ module.exports.webpack = {
     // contenu des modules, nous avons des plugins, plus globaux au processus
     plugins: (
       [
+        new CleanWebpackPlugin(['.tmp'], {
+          root: path.resolve(__dirname, '..'),
+          verbose: true
+        }),
         new LiveReloadPlugin({
           hostname : '192.168.0.42'
         }),
@@ -148,6 +154,19 @@ module.exports.webpack = {
         // if (__PROD__) { ... }
         new webpack.DefinePlugin({
           __PROD__: production
+        }),
+
+        new BrowserSyncPlugin({
+          // browse to http://localhost:3000/ during development,
+          // ./public directory is being served
+          host: '192.168.0.42',
+          port: 3000,
+          open: false,
+          reloadOnRestart: true,
+          proxy: {
+            target: "http://localhost:1337",
+            ws: true
+          },
         }),
       ]
       // en production, on peut rajouter des plugins pour optimiser
