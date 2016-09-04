@@ -1,3 +1,5 @@
 # chat
 
-a [Sails](http://sailsjs.org) application
+## Virgin branch
+#### Todo
+add linker -> https://github.com/teamfa/linker-webpack-plugin

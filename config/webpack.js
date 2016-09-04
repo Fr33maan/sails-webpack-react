@@ -11,6 +11,7 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 // on récupère sa valeur ici en tant que booléen
 var production = process.argv.indexOf("--production") > -1
 
+
 module.exports.webpack = {
 
   options : {
@@ -20,7 +21,7 @@ module.exports.webpack = {
     // nos points d'entrée, par clé
     // (on peut en définir plusieurs)
     entry: {
-      'js/chat/chatBundle.js': './assets/js/chat',
+      'js/bundle.js': './assets/js',
       'styles/style.css' : './assets/styles/importer.less',
       // 'styles/style.css': [
       //   './assets/styles/importer.less'
