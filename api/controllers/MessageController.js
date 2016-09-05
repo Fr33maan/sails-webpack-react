@@ -9,8 +9,6 @@ module.exports = {
 
 	test : function(req, res) {
 
-		
-		console.log(req)
 		res.json('ok from test action')
 
 	}

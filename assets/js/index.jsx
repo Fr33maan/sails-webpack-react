@@ -14,7 +14,31 @@ const config  = {
 }
 var crud = new reduxCrudAsync(config)
 
-console.log(io.socket.get('/message/test'))
+io.socket.post('/auth/signup', {
+  email : 'test1@test.com',
+  username : 'test1',
+  password : '123123',
+  password_confirmation : '123123'
+
+}, function(resData, jwres){
+  console.log(resData)
+  console.log(jwres)
+
+
+  io.socket.post('/auth/signup', {
+    email : 'test1@test.com',
+    username : 'test1',
+    password : '123123',
+    password_confirmation : '123123'
+
+  }, function(resData, jwres){
+    console.log(resData)
+    console.log(jwres)
+
+
+  })
+
+})
 
 
 
