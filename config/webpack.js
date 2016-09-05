@@ -46,6 +46,7 @@ module.exports.webpack = {
       extensions: [
         "",
         ".js",
+        ".jsx",
         ".json",
       ],
     },
@@ -57,7 +58,7 @@ module.exports.webpack = {
       loaders: [
         {
           // pour tous les fichiers qui finissent par .js
-          test: /\.js$/,
+          test: /\.j(s|sx)$/,
           // ... en prenant bien soin d'exclure les node_modules
           exclude: /node_modules/,
 
