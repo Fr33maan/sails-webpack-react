@@ -18,11 +18,16 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "less-plugin-clean-css": "^1.5.1",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.1.0",
+    "passport-local": "^1.0.0",
     "rc": "1.0.1",
     "sails": "~0.12.4",
     "sails-disk": "~0.10.9",
     "sails-hook-babel": "^6.0.1",
     "sails-mongo": "^0.12.1",
+    "sails-service-cipher": "^3.2.1",
+    "sails-service-hash": "^3.2.1",
     "sails-webpack": "^1.0.13"
   },
   "scripts": {
