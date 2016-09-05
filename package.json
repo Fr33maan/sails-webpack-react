@@ -41,6 +41,7 @@
     "browser-sync-webpack-plugin": "^1.1.2",
     "clean-webpack-plugin": "^0.1.10",
     "linker-webpack-plugin": "^1.0.2",
+    "sails-hook-autoreload": "^0.13.2",
     "webpack-livereload-plugin": "^0.8.2"
   }
 }
