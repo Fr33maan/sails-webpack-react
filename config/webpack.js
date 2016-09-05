@@ -134,9 +134,6 @@ module.exports.webpack = {
           root: path.resolve(__dirname, '..'),
           verbose: true
         }),
-        new LiveReloadPlugin({
-          hostname : '192.168.0.42'
-        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new CopyWebpackPlugin([
@@ -164,6 +161,7 @@ module.exports.webpack = {
           host: '192.168.0.42',
           port: 3000,
           open: false,
+          files: "./**/*",
           reloadOnRestart: true,
           proxy: {
             target: "http://localhost:1337",
