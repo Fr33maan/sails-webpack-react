@@ -1,3 +1,5 @@
+var host = 'localhost'
+
 var path = require("path")
 var webpack = require("webpack")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
@@ -158,7 +160,7 @@ module.exports.webpack = {
         new BrowserSyncPlugin({
           // browse to http://localhost:3000/ during development,
           // ./public directory is being served
-          host: '192.168.0.42',
+          host: host,
           port: 3000,
           open: false,
           files: "./**/*",
