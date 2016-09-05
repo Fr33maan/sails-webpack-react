@@ -1,3 +1,5 @@
+var host = 'localhost'
+
 var path = require("path")
 var webpack = require("webpack")
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
@@ -133,9 +135,6 @@ module.exports.webpack = {
           root: path.resolve(__dirname, '..'),
           verbose: true
         }),
-        new LiveReloadPlugin({
-          hostname : '192.168.0.42'
-        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new CopyWebpackPlugin([
@@ -160,9 +159,10 @@ module.exports.webpack = {
         new BrowserSyncPlugin({
           // browse to http://localhost:3000/ during development,
           // ./public directory is being served
-          host: '192.168.0.42',
+          host: host,
           port: 3000,
           open: false,
+          files: "./**/*",
           reloadOnRestart: true,
           proxy: {
             target: "http://localhost:1337",
